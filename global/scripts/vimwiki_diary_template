@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+import datetime
+import urllib.request
+from urllib.parse import quote_plus
+
+
+weather_url = "https://wttr.in/Ottawa?format="
+url_part = "Time:+%T;+%l:+%c+%t+(%f);+%m;+Precipitation:+%p+(3hour);+Pressure:+%P;+UV index:+%u;+Sunrise:+%S;+Dawn:+%D;"
+encode_url_part = quote_plus(url_part)
+
+template = """
+Date: {date}
+Weather: {weather}
+
+== Notes ==
+"""
+
+current_date_time = datetime.datetime.now()
+formatted_date_time = current_date_time.strftime('%a %b %d %H:%M:%S %Z %Y')
+
+response = urllib.request.urlopen(weather_url + encode_url_part)
+weather_data = response.read().decode("utf-8").replace("+", " ")
+
+
+print(template.format(date=formatted_date_time, weather=weather_data))
