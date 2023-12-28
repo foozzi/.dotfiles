@@ -69,6 +69,9 @@ alias wr='curl wttr.in'
 ## python
 alias python='python3'
 alias py='python'
+## Open Suse
+alias zup='sudo zypper dup'
+alias zin='sudo zypper in'
 
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
