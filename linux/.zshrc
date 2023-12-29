@@ -100,6 +100,9 @@ export PATH=$PATH:$HOME/.config/emacs/bin
 ## golang
 export GOPATH=$HOME/go # don't forget to change your path correctly!
 export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin
+## color
+export TERM=tmux-256color
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export VOLTA_HOME="$HOME/.volta"
