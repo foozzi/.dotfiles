@@ -103,6 +103,8 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin
 ## color
 export TERM=tmux-256color
+## docker
+export DOCKER_HOST=unix:///run/user/1000/docker.sock
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export VOLTA_HOME="$HOME/.volta"

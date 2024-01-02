@@ -67,7 +67,15 @@ local config = function()
         require('lspconfig').lua_ls.setup(lua_opts)
       end,
       pyright = function()
-        require('lspconfig').pyright.setup({})
+        require('lspconfig').pyright.setup({
+          settings = {
+            python = {
+              analysis = {
+                typeCheckingMode = "off"
+              }
+            }
+          }
+        })
       end,
     }
   })
