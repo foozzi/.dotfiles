@@ -36,10 +36,15 @@ local config = function()
     vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
     vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
     vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-    vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
+    vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
     vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+    vim.keymap.set("n", "<leader>gi", function() vim.lsp.buf.implementation() end, opts)
+    -- nvim-lint
+    vim.keymap.set("n", "<leader>li", function() require("lint").try_lint() end, opts)
+    -- conform
+    vim.keymap.set("n", "<leader>ff", function() require("conform").format({ bufnr = bufnr }) end, opts)
   end)
 
   lsp_zero.set_sign_icons({
@@ -53,11 +58,13 @@ local config = function()
   require('mason-lspconfig').setup({
     ensure_installed = {
       "bashls",
-      "tsserver",
+      -- "tsserver",
       "pyright",
       "lua_ls",
       "jsonls",
       "clangd",
+      "ruff_lsp",
+      "biome"
     },
     automatic_installation = true,
     handlers = {
@@ -109,6 +116,21 @@ local config = function()
       ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
       ['<CR>'] = cmp.mapping.confirm({ select = true }),
       ['<C-Space>'] = cmp.mapping.complete(),
+      ['<C-f>'] = cmp.mapping(function(fallback)
+        if luasnip.jumpable(1) then
+          luasnip.jump(1)
+        else
+          fallback()
+        end
+      end, {'i', 's'}),
+
+      ['<C-b>'] = cmp.mapping(function(fallback)
+        if luasnip.jumpable(-1) then
+          luasnip.jump(-1)
+        else
+          fallback()
+        end
+      end, {'i', 's'}),
     }),
   })
 end
