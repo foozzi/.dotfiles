@@ -72,6 +72,7 @@ alias py='python'
 ## Open Suse
 alias zup='sudo zypper dup'
 alias zin='sudo zypper in'
+alias rbf='sudo systemctl reboot --firmware-setup'
 
 # Preferred editor for local and remote sessions
 export EDITOR='vim'

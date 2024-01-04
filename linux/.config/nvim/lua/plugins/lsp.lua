@@ -3,7 +3,7 @@ local config = function()
   local luasnip = require 'luasnip'
   local diagnostic_signs = require("utils.icons").diagnostic_signs
 
-  lsp_zero.on_attach(function(client, bufnr)
+  lsp_zero.on_attach(function(_, bufnr)
     vim.diagnostic.config({
       virtual_text = false, -- disable virtual text
       update_in_insert = true,
@@ -58,13 +58,13 @@ local config = function()
   require('mason-lspconfig').setup({
     ensure_installed = {
       "bashls",
-      -- "tsserver",
+      "tsserver",
       "pyright",
       "lua_ls",
       "jsonls",
       "clangd",
       "ruff_lsp",
-      "biome"
+      "biome" -- will install for formatting only
     },
     automatic_installation = true,
     handlers = {
@@ -84,13 +84,15 @@ local config = function()
           }
         })
       end,
+      biome = function() -- use tsserver instead
+        return {}
+      end,
     }
   })
 
   local cmp = require('cmp')
   local cmp_select = {behavior = cmp.SelectBehavior.Select}
   require("luasnip/loaders/from_vscode").lazy_load()
-  -- require("luasnip/loaders/from_vscode").load()
 
   cmp.setup({
     snippet = {
