@@ -6,11 +6,16 @@ return {
         python = { "ruff_format", "ruff_fix" },
         javascript = { "biome" },
         typescript = { "biome" },
+        javascriptreact = { "biome" },
+        typescriptreact = { "biome" },
         json = { "biome" },
-        jsx = { "biome" },
         sh = { "shfmt" },
         ['*'] = { 'trim_whitespace', 'codespell' },
       },
+    format_on_save = {
+      timeout_ms = 500,
+      lsp_fallback = true,
+    },
   },
   lazy = false,
 }

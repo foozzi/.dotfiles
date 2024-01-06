@@ -44,7 +44,7 @@ local config = function()
     -- nvim-lint
     vim.keymap.set("n", "<leader>li", function() require("lint").try_lint() end, opts)
     -- conform
-    vim.keymap.set("n", "<leader>ff", function() require("conform").format({ bufnr = bufnr }) end, opts)
+    vim.keymap.set("n", "<leader>fr", function() require("conform").format({ bufnr = bufnr }) end, opts)
   end)
 
   lsp_zero.set_sign_icons({
