@@ -1,0 +1,11 @@
+[keyboard]
+bindings = [
+  {key = "W", mods = "Alt", chars = "\u001BW" },
+  {key = "X", mods = "Alt", chars = "\u001BX" },
+  {key = 27, mods = "Alt|Shift", chars = "\u001Bn" },
+  {key = 26, mods = "Alt|Shift", chars = "\u001Bp" },
+  {key = "Z", mods = "Alt", chars = "\u0001w" },
+  # tmux resurrect plugin
+  {key = "R", mods = "Alt", chars = "\u0001\u0012" },
+  {key = "S", mods = "Alt", chars = "\u0001\u0013" },
+]
