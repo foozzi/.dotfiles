@@ -6,7 +6,7 @@ set realname = "Ihor Tkachenko"
 set imap_user = "foozzione@gmail.com"
 set smtp_url = "smtps://foozzione@gmail.com@smtp.gmail.com:465/"
 set smtp_authenticators = 'gssapi:login'
-source ./passwords
+source ./settings
 
 # Ensure TLS is enforced
 set ssl_starttls = yes
