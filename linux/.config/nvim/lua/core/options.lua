@@ -25,7 +25,7 @@ opt.cmdheight = 1
 opt.scrolloff = 10
 opt.completeopt = "menuone,noinsert,noselect"
 -- opt.guicursor = ""
-
+opt.showmode = false
 opt.tabline = '%!v:lua.require("utils").tabline()'
 
 
