@@ -11,7 +11,7 @@ unfocused_hollow = true
 shape = "Block"
 
 [env]
-TERM = "tmux-256color"
+TERM = "xterm-256color"
 
 [font]
 size = 10.0
