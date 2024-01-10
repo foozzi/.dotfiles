@@ -56,7 +56,7 @@ alias cat='bat --paging=never --theme=Dracula'
 alias ls="eza"
 alias la="eza -lagh --git --header"
 alias lt="eza -T --git-ignore"
-alias nano='micro'
+#alias nano='micro'
 ## files/dirs
 alias zshe='vim ~/.zshrc'
 alias zshs='. ~/.zshrc'

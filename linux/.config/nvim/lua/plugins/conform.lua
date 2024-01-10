@@ -1,6 +1,7 @@
 return {
 	"stevearc/conform.nvim",
 	opts = {
+		icon = "", --'▎',
 		formatters_by_ft = {
 			lua = { "stylua" },
 			python = { "ruff_format", "ruff_fix" },

@@ -1,25 +1,14 @@
-local config = function()
-	local bufferline = require("bufferline")
-	bufferline.setup({
-		options = {
-			-- style_preset = bufferline.style_preset.no_italic,
-			-- or you can combine these e.g.
-			style_preset = {
-				bufferline.style_preset.no_italic,
-				bufferline.style_preset.no_bold,
-			},
-			hover = {
-				enabled = true,
-				delay = 200,
-				reveal = { "close" },
-			},
-		},
-	})
-end
-
 return {
 	"akinsho/bufferline.nvim",
-	opts = config,
+	opts = {
+		options = {
+			-- diagnostics = "nvim_lsp",
+			always_show_bufferline = false,
+			offsets = {
+				{ filetype = "NvimTree", text = "File Explorer", highlight = "Directory", text_align = "left" },
+			},
+		},
+	},
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
 	},
