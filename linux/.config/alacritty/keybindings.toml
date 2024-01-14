@@ -9,6 +9,6 @@ bindings = [
   {key = "R", mods = "Alt", chars = "\u0001\u0012" },
   {key = "S", mods = "Alt", chars = "\u0001\u0013" },
   # default bindings
-  {key = "V", mods = "Control", action = "Paste"},
-  {key = "C", mods = "Control", action = "Copy"}
+  # {key = "V", mods = "Control", action = "Paste"},
+  # {key = "C", mods = "Control", action = "Copy"}
 ]

@@ -89,7 +89,6 @@ local config = function()
 			"lua_ls",
 			"jsonls",
 			"clangd",
-			"ruff_lsp",
 			"biome", -- will install for formatting only
 		},
 		automatic_installation = true,

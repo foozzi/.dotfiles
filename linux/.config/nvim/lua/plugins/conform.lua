@@ -4,7 +4,7 @@ return {
 		icon = "", --'▎',
 		formatters_by_ft = {
 			lua = { "stylua" },
-			python = { "ruff_format", "ruff_fix" },
+			python = { "ruff_format", "ruff_fix", "isort" },
 			javascript = { "biome" },
 			typescript = { "biome" },
 			javascriptreact = { "biome" },
