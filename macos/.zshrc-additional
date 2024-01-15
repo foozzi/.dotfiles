@@ -1,0 +1,10 @@
+## brew
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	alias bu='brew update'
+	alias bug='brew upgrade'
+fi
+
+## python 3.12
+#export PATH=/opt/homebrew/opt/python@3.12/libexec/bin:$PATH
+## python 3.11
+export PATH=/opt/homebrew/opt/python@3.11/libexec/bin:$PATH

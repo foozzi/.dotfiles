@@ -1,0 +1,10 @@
+# Where to put the stuff
+set header_cache = "$HOME/Library/Caches/mutt/headers"
+set message_cachedir = "$HOME/Library/Caches/mutt/bodies"
+set certificate_file = "$HOME/Library/Caches/mutt/certificates"
+
+# link to mailcap file
+set mailcap_path = "$HOME/.config/mutt/mailcap"
+
+# save attachments to a folder
+macro attach s '<save-entry> <bol>$HOME/Documents/attachments/<eol>' 'save attachment'

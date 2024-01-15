@@ -69,10 +69,6 @@ alias wr='curl wttr.in'
 ## python
 alias python='python3'
 alias py='python'
-## Open Suse
-alias zup='sudo zypper dup'
-alias zin='sudo zypper in'
-alias rbf='sudo systemctl reboot --firmware-setup'
 
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
@@ -104,10 +100,10 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin
 ## color
 export TERM=tmux-256color
-## docker
-export DOCKER_HOST=unix:///run/user/1000/docker.sock
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+source ./.zshrc-additional
 

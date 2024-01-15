@@ -1,0 +1,7 @@
+## Open Suse
+alias zup='sudo zypper dup'
+alias zin='sudo zypper in'
+alias rbf='sudo systemctl reboot --firmware-setup'
+
+## docker
+export DOCKER_HOST=unix:///run/user/1000/docker.sock
