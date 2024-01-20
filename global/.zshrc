@@ -105,5 +105,5 @@ export TERM=tmux-256color
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
-source ./.zshrc-additional
+source $HOME/.zshrc-additional
 
