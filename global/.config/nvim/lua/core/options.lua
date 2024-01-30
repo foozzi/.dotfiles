@@ -27,6 +27,7 @@ opt.completeopt = "menuone,noinsert,noselect"
 -- opt.guicursor = ""
 opt.showmode = false
 -- opt.tabline = '%!v:lua.require("utils").tabline()'
+opt.conceallevel = 2
 
 -- Behaviour
 opt.hidden = true
