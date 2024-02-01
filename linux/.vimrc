@@ -160,7 +160,7 @@ let g:gruvbox_contrast_dark='soft'
 
 " vim wiki
 let g:GPGFilePattern = '*.\(gpg\|asc\|pgp\)\(.wiki\|.md\)\='
-" toogle checklists
+" toggle checklists
 nnoremap <leader>cl :VimwikiToggleListItem<CR>
 " reset gpg-agent password cache after close or save the buffer (vimwiki diary)
 autocmd BufWritePost *.asc.md !gpgconf --reload gpg-agent
@@ -168,9 +168,9 @@ autocmd BufWritePost *.asc.md !gpgconf --reload gpg-agent
 " ~/vimwiki/personal - private content
 " ~/vimwiki/public_wiki - public wiki content
 " ~/vimwiki/diary - private diary
-let default_wiki = '~/vimwiki/personal'
-let public_wiki = '~/vimwiki/public_wiki'
-let g:diary = '~/vimwiki/diary'
+let default_wiki = '~/Productivity/vimwiki/personal'
+let public_wiki = '~/Productivity/vimwiki/public_wiki'
+let g:diary = '~/Productivity/vimwiki/diary'
 let g:diary_index_name = 'diary'
 let g:diary_ext = '.asc.md'
 let g:vimwiki_list = [{
