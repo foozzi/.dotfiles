@@ -1,6 +1,5 @@
 local config = function()
-	local npairs = require("nvim-autopairs")
-	-- npairs.remove_rule('"""')
+	require("nvim-autopairs").setup({})
 end
 
 return {
