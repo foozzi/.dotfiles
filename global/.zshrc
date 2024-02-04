@@ -87,7 +87,9 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 
 # paths
 ## rust
-source $HOME/.cargo/env
+if [[ -e "$HOME/.cargo/env" ]]; then
+  source $HOME/.cargo/env
+fi
 ## all from local/bin
 export PATH=$PATH:$HOME/.local/bin
 ## pdtm
