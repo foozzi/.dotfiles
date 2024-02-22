@@ -1,6 +1,7 @@
 import = [
   "~/.config/alacritty/themes/dracula.toml",
-  "~/.config/alacritty/keybindings.toml"
+  "~/.config/alacritty/keybindings.toml",
+  "~/.config/alacritty/font.toml"
 ]
 live_config_reload = true
 
@@ -12,9 +13,6 @@ shape = "Block"
 
 [env]
 TERM = "xterm-256color"
-
-[font]
-size = 11
 
 [font.bold]
 family = "JetBrainsMono NF"
