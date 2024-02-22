@@ -3,3 +3,4 @@ linux/.ssh/specific_config filter=git-crypt diff=git-crypt
 macos/.ssh/specific_config filter=git-crypt diff=git-crypt
 global/.config/mutt/settings filter=git-crypt diff=git-crypt
 linux/.gnupg/gpg-agent.conf filter=git-crypt diff=git-crypt
+global/scripts/vimwiki_diary_template filter=git-crypt diff=git-crypt
