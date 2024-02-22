@@ -37,9 +37,9 @@ mapkey("<C-Right>", "vertical resize -2", "n")
 mapkey("<leader>pa", "echo expand('%:p')", "n") -- Show Full File Path
 
 -- Notes
-mapkey("<leader>ng", "Neorg workspace general", "n")
-mapkey("<leader>nw", "Neorg workspace work", "n")
-mapkey("<leader>ny", "Neorg workspace youtube", "n")
+-- mapkey("<leader>ng", "Neorg workspace general", "n")
+-- mapkey("<leader>nw", "Neorg workspace work", "n")
+-- mapkey("<leader>ny", "Neorg workspace youtube", "n")
 
 -- Indenting
 vim.keymap.set("v", "<", "<gv", { silent = true, noremap = true })
