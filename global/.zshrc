@@ -69,6 +69,8 @@ alias wr='curl wttr.in'
 ## python
 alias python='python3'
 alias py='python'
+## todo.txt
+alias todo="todo.sh"
 
 # Preferred editor for local and remote sessions
 export EDITOR='vim'

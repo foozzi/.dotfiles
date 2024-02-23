@@ -1,3 +1,4 @@
+-- local helpers = require("core.helpers")
 -- auto-format on save
 local lsp_fmt_group = vim.api.nvim_create_augroup("LspFormattingGroup", {})
 vim.api.nvim_create_autocmd("BufWritePre", {
@@ -21,3 +22,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
+
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+-- 	pattern = "*",
+-- 	callback = helpers.UpdateOrAppendTimestamp,
+-- })

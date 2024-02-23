@@ -1,0 +1,29 @@
+-- local UpdateOrAppendTimestamp = function()
+-- 	if vim.bo.filetype == "telekasten" then
+-- 		local line_found = false
+-- 		local update_marker = "!!!update at"
+-- 		local new_timestamp = os.date("!%Y-%m-%d %H:%M!!!")
+-- 		for line_number = 1, vim.api.nvim_buf_line_count(0) do
+-- 			local line = vim.api.nvim_buf_get_lines(0, line_number - 1, line_number, false)[1]
+-- 			if line:find(update_marker) then
+-- 				print("tst")
+-- 				vim.api.nvim_buf_set_lines(
+-- 					0,
+-- 					line_number - 1,
+-- 					line_number,
+-- 					false,
+-- 					{ update_marker .. " " .. new_timestamp }
+-- 				)
+-- 				line_found = true
+-- 				break
+-- 			end
+-- 		end
+-- 		if not line_found then
+-- 			vim.api.nvim_buf_set_lines(0, -1, -1, false, { update_marker .. " " .. new_timestamp })
+-- 		end
+-- 	end
+-- end
+--
+-- return {
+-- 	UpdateOrAppendTimestamp = UpdateOrAppendTimestamp,
+-- }
