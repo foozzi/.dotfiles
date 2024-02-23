@@ -90,7 +90,7 @@ local config = function()
 			"jsonls",
 			"clangd",
 			"biome", -- will install for formatting only
-			"marksman",
+			-- "marksman",
 		},
 		automatic_installation = true,
 		handlers = {

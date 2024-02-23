@@ -70,7 +70,7 @@ alias wr='curl wttr.in'
 alias python='python3'
 alias py='python'
 ## todo.txt
-alias todo="todo.sh"
+alias todo="todo.sh -d ~/Dropbox/TextSync/TODO/todo.cfg"
 
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
@@ -110,4 +110,3 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
 source $HOME/.zshrc-additional
-
