@@ -64,6 +64,8 @@ alias zshs='. ~/.zshrc'
 alias nm='neomutt'
 ## vim
 alias diary='vim ~/vimwiki/diary/diary.asc.md'
+## nvim
+alias evim='nvim ~/.dotfiles/global/.config/nvim/'
 ## wttr.in
 alias wr='curl wttr.in'
 ## python

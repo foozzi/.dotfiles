@@ -131,6 +131,7 @@ local config = function()
 			completeopt = "menu,menuone,noinsert",
 		},
 		sources = {
+			{ name = "mkdnflow" },
 			{ name = "luasnip" },
 			{ name = "path" },
 			{ name = "nvim_lsp" },
