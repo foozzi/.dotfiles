@@ -73,8 +73,6 @@ alias python='python3'
 alias py='python'
 ## todo.txt
 alias todo="todo.sh -d ~/Dropbox/TextSync/TODO/todo.cfg"
-## cb (https://github.com/Slackadays/Clipboard)
-alias cb='flatpak run app.getclipboard.Clipboard'
 
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
@@ -110,8 +108,6 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/.cargo/bin
 ## color
 export TERM=tmux-256color
-## Flatpak
-export PATH=$PATH:/var/lib/flatpak/exports/bin
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export VOLTA_HOME="$HOME/.volta"

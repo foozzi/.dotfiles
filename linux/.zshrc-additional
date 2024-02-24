@@ -5,3 +5,5 @@ alias rbf='sudo systemctl reboot --firmware-setup'
 
 ## docker
 export DOCKER_HOST=unix:///run/user/1000/docker.sock
+## Flatpak
+export PATH=$PATH:/var/lib/flatpak/exports/bin
