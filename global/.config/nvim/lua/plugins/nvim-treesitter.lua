@@ -1,4 +1,6 @@
 local config = function()
+	local parser_configs = require("nvim-treesitter.parsers").get_parser_configs()
+	parser_configs.markdown.used_by = { "telekasten" }
 	require("nvim-treesitter.configs").setup({
 		build = ":TSUpdate",
 		indent = {
@@ -49,5 +51,5 @@ end
 return {
 	"nvim-treesitter/nvim-treesitter",
 	lazy = false,
-	opts = config,
+	config = config,
 }

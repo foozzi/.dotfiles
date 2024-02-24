@@ -18,6 +18,15 @@ return {
 				cmp = true,
 			},
 			filetypes = { md = true, rmd = true, markdown = true, telekasten = true },
+			links = {
+				transform_explicit = function(text)
+					return text
+				end,
+				style = "wiki",
+			},
 		})
 	end,
+	dependencies = {
+		"bullets-vim/bullets.vim",
+	},
 }

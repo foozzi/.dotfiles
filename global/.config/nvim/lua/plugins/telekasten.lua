@@ -1,6 +1,12 @@
+local templates = vim.fn.expand("~/Dropbox/TextSync/99-templates")
+
 local config = function()
 	require("telekasten").setup({
 		home = vim.fn.expand("~/Dropbox/TextSync/00-zettel"),
+		-- dailies = vim.fn.expand("~/Dropbox/TextSync/00-zettel/dialy"),
+		templates = templates,
+		template_new_note = templates .. "/" .. "new_note",
+		template_new_daily = templates .. "/" .. "dialy_note",
 		vim.api.nvim_command("hi tkLink ctermfg=36 cterm=bold,underline guifg=#10ac84 gui=bold,underline"),
 		vim.api.nvim_command("hi tkBrackets ctermfg=gray guifg=gray"),
 
