@@ -23,6 +23,7 @@ return {
 					return text
 				end,
 				style = "wiki",
+				name_is_source = true,
 			},
 		})
 	end,
