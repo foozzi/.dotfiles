@@ -29,6 +29,8 @@ opt.completeopt = "menuone,noinsert,noselect"
 opt.showmode = false
 -- opt.tabline = '%!v:lua.require("utils").tabline()'
 opt.conceallevel = 2
+opt.breakindent = true
+opt.breakindentopt = "shift:2"
 
 -- Behaviour
 opt.hidden = true

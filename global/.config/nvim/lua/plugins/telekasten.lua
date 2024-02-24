@@ -7,6 +7,8 @@ local config = function()
 		templates = templates,
 		template_new_note = templates .. "/" .. "new_note",
 		template_new_daily = templates .. "/" .. "dialy_note",
+		image_subdir = "img",
+		media_previewer = "catimg-previewer",
 		vim.api.nvim_command("hi tkLink ctermfg=36 cterm=bold,underline guifg=#10ac84 gui=bold,underline"),
 		vim.api.nvim_command("hi tkBrackets ctermfg=gray guifg=gray"),
 
