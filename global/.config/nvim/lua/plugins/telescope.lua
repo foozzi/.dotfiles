@@ -1,6 +1,18 @@
 local mapvimkey = require("utils.keymapper").mapvimkey
 
 local config = function()
+	local actions = require("telescope.actions")
+	local action_state = require("telescope.actions.state")
+	-- copy file name from search
+	local copy_filename_to_clipboard = function(prompt_bufnr)
+		local selection = action_state.get_selected_entry()
+		local filename_part = vim.split(selection.value, ":")[1]
+		vim.fn.setreg("*", filename_part)
+		vim.fn.setreg("+", filename_part)
+		print("Copied filename: " .. filename_part)
+		actions.close(prompt_bufnr)
+	end
+
 	local telescope = require("telescope")
 	telescope.setup({
 		defaults = {
@@ -8,6 +20,10 @@ local config = function()
 				i = {
 					["<C-j>"] = "move_selection_next",
 					["<C-k>"] = "move_selection_previous",
+					["<C-c>"] = copy_filename_to_clipboard,
+				},
+				n = {
+					["<C-c>"] = copy_filename_to_clipboard,
 				},
 			},
 		},
@@ -31,7 +47,6 @@ end
 
 return {
 	"nvim-telescope/telescope.nvim",
-	tag = "0.1.3",
 	lazy = false,
 	dependencies = { "nvim-lua/plenary.nvim" },
 	config = config,

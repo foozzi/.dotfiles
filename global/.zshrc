@@ -63,9 +63,13 @@ alias zshs='. ~/.zshrc'
 ## neomutt
 alias nm='neomutt'
 ## vim
-alias diary='vim ~/vimwiki/diary/diary.asc.md'
+alias ovim='vim' # original vim
+alias diary='ovim ~/vimwiki/diary/diary.asc.md'
 ## nvim
 alias evim='nvim ~/.dotfiles/global/.config/nvim/'
+# alias vim='nvim'
+alias vi='nvim'
+alias v='nvim'
 ## wttr.in
 alias wr='curl wttr.in'
 ## python
@@ -75,7 +79,7 @@ alias py='python'
 alias todo="todo.sh -d ~/Dropbox/TextSync/TODO/todo.cfg"
 
 # Preferred editor for local and remote sessions
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # bindkeys
 ## autosuggest
