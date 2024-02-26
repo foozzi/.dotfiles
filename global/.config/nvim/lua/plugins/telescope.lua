@@ -1,18 +1,7 @@
 local mapvimkey = require("utils.keymapper").mapvimkey
+local copy_filename_to_clipboard = require("utils.telescope_addons").copy_filename_to_clipboard
 
 local config = function()
-	local actions = require("telescope.actions")
-	local action_state = require("telescope.actions.state")
-	-- copy file name from search
-	local copy_filename_to_clipboard = function(prompt_bufnr)
-		local selection = action_state.get_selected_entry()
-		local filename_part = vim.split(selection.value, ":")[1]
-		vim.fn.setreg("*", filename_part)
-		vim.fn.setreg("+", filename_part)
-		print("Copied filename: " .. filename_part)
-		actions.close(prompt_bufnr)
-	end
-
 	local telescope = require("telescope")
 	telescope.setup({
 		defaults = {
