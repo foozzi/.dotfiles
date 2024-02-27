@@ -112,6 +112,8 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/.cargo/bin
 ## color
 export TERM=tmux-256color
+## default gui browser
+# export BROWSER="firefox"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export VOLTA_HOME="$HOME/.volta"
