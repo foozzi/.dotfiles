@@ -29,7 +29,7 @@ end
 M.search_title = function()
 	require("telescope.builtin").live_grep({
 		prompt_title = "Search by zettel title",
-		default_text = "^title: ",
+		default_text = "^raw_title: ",
 		attach_mappings = function(_, map)
 			map("n", "<c-i>", paste_titled_link())
 			map("i", "<c-i>", paste_titled_link())

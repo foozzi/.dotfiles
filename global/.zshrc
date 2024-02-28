@@ -77,6 +77,8 @@ alias python='python3'
 alias py='python'
 ## todo.txt
 alias todo="todo.sh -d ~/Dropbox/TextSync/TODO/todo.cfg"
+## eton
+alias et="eton"
 
 # Preferred editor for local and remote sessions
 export EDITOR='nvim'
