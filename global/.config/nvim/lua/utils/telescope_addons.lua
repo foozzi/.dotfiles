@@ -11,7 +11,7 @@ local function paste_titled_link()
 		local parts = vim.split(selection.value, ":")
 		local filename_part = parts[1]
 		local title = parts[#parts]:match("^%s*(.-)%s*$")
-		local link = "[" .. title .. "](" .. filename_part .. ")"
+		local link = "[" .. title .. "](../" .. filename_part .. ")"
 		vim.api.nvim_put({ link }, "", true, true)
 	end
 end
@@ -21,13 +21,14 @@ local function paste_link()
 		actions.close(prompt_bufnr)
 		local selection = action_state.get_selected_entry()
 		local filename_part = vim.split(selection.value, ":")[1]
-		local link = "[[" .. filename_part .. "]]"
+		local link = "[[../" .. filename_part .. "]]"
 		vim.api.nvim_put({ link }, "", true, true)
 	end
 end
 
 M.search_title = function()
 	require("telescope.builtin").live_grep({
+		cwd = "~/Dropbox/TextSync/NOTES/",
 		prompt_title = "Search by zettel title",
 		default_text = "^raw_title: ",
 		attach_mappings = function(_, map)
