@@ -1,6 +1,6 @@
 return {
 	"foozzi/mkdnflow.nvim",
-	lazy = false,
+	lazy = true,
 	config = function()
 		require("mkdnflow").setup({
 			modules = {
