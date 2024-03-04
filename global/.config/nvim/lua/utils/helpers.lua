@@ -13,6 +13,8 @@ function M.InsertMarkdownURL()
   local m = string.match(html, pattern)
   if m then title = m end
   if title ~= "" then
+    title = title:gsub("%[", "(")
+    title = title:gsub("%]", ")")
     local markdownLink = "[" .. title .. "](" .. url .. ")"
     vim.api.nvim_put({markdownLink}, "", true, true)
     -- vim.api.nvim_command("call append(line('.'), '" .. markdownLink .. "')")
