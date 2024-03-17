@@ -15,6 +15,7 @@
 
 export EDITOR="nvim" # Set by `nb` • Thu Mar 14 11:06:48 PM EDT 2024
 export NB_PINNED_PATTERN="#pinned"
+export NB_MARKDOWN_TOOL="glow"
 
 export NB_COLOR_THEME="${NB_COLOR_THEME:-forest}" # Set by `nb` • Sat Mar 16 04:55:25 PM EDT 2024
 
