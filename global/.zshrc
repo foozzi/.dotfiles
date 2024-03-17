@@ -123,3 +123,6 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 
 source $HOME/.zshrc-additional
 source $HOME/.zshrc-secrets
+
+# https://github.com/nvbn/thefuck
+eval $(thefuck --alias)
