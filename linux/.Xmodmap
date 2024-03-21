@@ -1,3 +1,4 @@
+! changing the supply between each other
 clear mod1
 clear mod4
 keycode 64 = Super_L
