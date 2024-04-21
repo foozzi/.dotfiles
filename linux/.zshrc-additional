@@ -2,6 +2,8 @@
 alias zup='sudo zypper dup'
 alias zin='sudo zypper in'
 alias rbf='sudo systemctl reboot --firmware-setup'
+## Arch Linux
+alias sleep='systemctl suspend'
 
 ## docker
 export DOCKER_HOST=unix:///run/user/1000/docker.sock
