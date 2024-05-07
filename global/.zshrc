@@ -122,4 +122,4 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
 source $HOME/.zshrc-additional
-#source $HOME/.zshrc-secrets
+source $HOME/.zshrc-secrets

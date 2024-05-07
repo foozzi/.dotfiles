@@ -1,0 +1,24 @@
+{
+    "border": "pixel",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1506,
+       "width": 2518,
+       "x": 21,
+       "y": 73
+    },
+    "marks": [],
+    "name": "Saved Messages – (350487)",
+    "percent": 1,
+    "swallows": [
+       {
+       "class": "^TelegramDesktop$",
+       "instance": "^telegram\\-desktop$",
+       "machine": "^cadwell$",
+       "title": "^Saved\\ Messages\\ \\–\\ \\(350487\\)$"
+       }
+    ],
+    "type": "con"
+}
+

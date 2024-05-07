@@ -1,0 +1,25 @@
+{
+    "border": "pixel",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1506,
+       "width": 2519,
+       "x": 0,
+       "y": 0
+    },
+    "marks": [],
+    "name": "i3 - ArchWiki — Mozilla Firefox",
+    "percent": 1,
+    "swallows": [
+       {
+       "class": "^firefox$",
+       "instance": "^Navigator$",
+       "machine": "^cadwell$",
+       "title": "^i3\\ \\-\\ ArchWiki\\ \\—\\ Mozilla\\ Firefox$",
+       "window_role": "^browser$"
+       }
+    ],
+    "type": "con"
+}
+
