@@ -198,9 +198,6 @@ exec --no-startup-id caffeine start &
 # backlight
 exec --no-startup-id xbacklight -set 90 &
 
-# tmux sessions helper
-exec --no-startup-id ~/.config/i3/tmux_session &
-
 # dpi fix
 exec --no-startup-id xrdb -merge ~/.Xresources &
 exec --no-startup-id xrandr --output DP-2 --mode 2560x1600 --rate 240.00 --dpi 160 &
