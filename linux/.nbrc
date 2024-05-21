@@ -20,3 +20,4 @@ export NB_MARKDOWN_TOOL="glow"
 export NB_COLOR_THEME="${NB_COLOR_THEME:-forest}" # Set by `nb` • Sat Mar 16 04:55:25 PM EDT 2024
 
 export NB_DIR="${NB_DIR:-/home/fz0x1/Dropbox/TextSync/NOTES}" # Set by `nb` • Sat Mar 16 04:56:35 PM EDT 2024
+export NB_BROWSER="firefox"
