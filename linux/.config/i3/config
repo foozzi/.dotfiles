@@ -196,7 +196,7 @@ bindsym $mod+r mode "resize"
 exec --no-startup-id caffeine start &
 
 # backlight
-exec --no-startup-id xbacklight -set 90 &
+#exec --no-startup-id xbacklight -set 90 &
 
 # dpi fix
 exec --no-startup-id xrdb -merge ~/.Xresources &
