@@ -1,8 +1,6 @@
 " Base settings (add comments)
 set nocompatible
-syntax on                                  " syntax highlight
-
-set clipboard=unnamedplus
+syntax enable                               " syntax highlight
 
 set t_Co=256                                " set 256 colors
 
@@ -29,7 +27,8 @@ set backspace=indent,eol,start              " backspace removes all (indents, EO
 
 set scrolloff=10                            " let 10 lines before/after cursor during scroll
 
-set clipboard=unnamed                       " use system clipboard
+" set clipboard=unnamed                       " use system clipboard
+set clipboard=unnamedplus
 
 set exrc                                    " enable usage of additional .vimrc files from working directory
 set secure                                  " prohibit .vimrc files to execute shell, create files, etc...
@@ -78,32 +77,32 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
 Plug 'easymotion/vim-easymotion'
 Plug 'preservim/nerdtree'
-Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'tommcdo/vim-exchange'
-Plug 'michaeljsmith/vim-indent-object'
+" Plug 'tommcdo/vim-exchange'
+" Plug 'michaeljsmith/vim-indent-object'
 Plug 'vimwiki/vimwiki'
 Plug 'mattn/calendar-vim'
 Plug 'jamessan/vim-gnupg'
 Plug 'ryanoasis/vim-devicons'
 " https://github.com/LunarWatcher/auto-pairs/blob/master/doc/AutoPairs.txt
 Plug 'LunarWatcher/auto-pairs'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'morhetz/gruvbox'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'sheerun/vim-polyglot'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-startify'
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
-" Plug 'ycm-core/YouCompleteMe'
+Plug 'ycm-core/YouCompleteMe'
 Plug 'dense-analysis/ale'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'majutsushi/tagbar'
+" Plug 'majutsushi/tagbar'
 
 call plug#end()
 
@@ -112,9 +111,9 @@ filetype plugin on
 filetype plugin indent on
 
 " tagbar
-let g:tagbar_autofocus=0
-let g:tagbar_width=42
-autocmd BufEnter *.py :call tagbar#autoopen(0)
+" let g:tagbar_autofocus=0
+" let g:tagbar_width=42
+" autocmd BufEnter *.py :call tagbar#autoopen(0)
 
 " ultisnips
 let g:UltiSnipsExpandTrigger = '<C-j>'
@@ -132,26 +131,26 @@ let NERDTreeWinSize=40
 " autocmd VimEnter * if !argc() | NERDTree | endif  " Load NERDTree only if vim is run without arguments
 
 " fzf
-set rtp+=/opt/homebrew/opt/fzf
-nmap <leader>bb :Buffers<CR>
+" set rtp+=/opt/homebrew/opt/fzf
+" nmap <leader>bb :Buffers<CR>
 
 " auto-pairs
 let g:AutoPairsMapBS = 1
 let g:AutoPairsBSAfter = 0
 
 " airline
-let g:airline#extensions#obsession#enable = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#ale#enabled = 1
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#whitespace#enabled = 0
-let g:airline_theme='gruvbox'
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-let g:airline_symbols.linenr = ' ☰ '
-let g:airline_symbols.colnr = ' : '
-let g:airline_symbols.maxlinenr = ''
+" let g:airline#extensions#obsession#enable = 1
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#ale#enabled = 1
+" let g:airline_powerline_fonts = 1
+" let g:airline#extensions#whitespace#enabled = 0
+" let g:airline_theme='gruvbox'
+" if !exists('g:airline_symbols')
+"     let g:airline_symbols = {}
+" endif
+" let g:airline_symbols.linenr = ' ☰ '
+" let g:airline_symbols.colnr = ' : '
+" let g:airline_symbols.maxlinenr = ''
 
 " theme
 autocmd vimenter * ++nested colorscheme gruvbox
@@ -160,7 +159,7 @@ let g:gruvbox_contrast_dark='soft'
 
 " vim wiki
 let g:GPGFilePattern = '*.\(gpg\|asc\|pgp\)\(.wiki\|.md\)\='
-" toggle checklists
+" toogle checklists
 nnoremap <leader>cl :VimwikiToggleListItem<CR>
 " reset gpg-agent password cache after close or save the buffer (vimwiki diary)
 autocmd BufWritePost *.asc.md !gpgconf --reload gpg-agent
@@ -211,8 +210,6 @@ command! InsertDiaryTemplate call AppendDiaryTemplate()
 nnoremap <leader>idr :InsertDiaryTemplate<CR>
 " inserting default GPG fingerprint for the diary
 let g:diaryGPG = 'CE7EB8727486553012A04E284EE708165AA10C48'
-" inserting default GPG fingerprint for the personal notes
-let g:personalGPG = '5F2D798AC3A4A1B1A0CAA868EBE731F3329F400C'
 command! InsertGPGAndExit call AppendGPGAndExit()
 function! AppendGPGAndExit()
   " detecting vim-gnupg dialog
@@ -222,16 +219,6 @@ function! AppendGPGAndExit()
   endif
 endfunction
 nnoremap <leader>igg :InsertGPGAndExit<CR>
-
-command! InsertDiaryGPGAndExit call AppendDiaryGPGAndExit()
-function! AppendDiaryGPGAndExit()
-  " detecting vim-gnupg dialog
-  if match(getline(2), '^GPG:') == 0
-      call append(line('.'), g:personalGPG)
-      wq
-  endif
-endfunction
-nnoremap <leader>igp :InsertDiaryGPGAndExit<CR>
 
 " prettier
 nmap <leader>mm <Plug>(PrettierAsync)
@@ -257,5 +244,5 @@ let g:ale_fix_on_save = 1
 " YCM
 set completeopt-=preview
 " autocmd CompleteDone * if pumvisible() == 0 | pclose | endif
-"
+
 set langmap=йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,пg,рh,оj,лk,дl,ж\\;,э',ё\\,яz,чx,сc,мv,иb,тn,ьm,б\\,,ю.,ЙQ,ЦW,УE,КR,ЕT,НY,ГU,ШI,ЩO,ЗP,Х{,Ъ},ФA,ЫS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж:,Э\\",ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б<,Ю>,Ё/|
