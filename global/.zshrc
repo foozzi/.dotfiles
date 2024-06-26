@@ -81,6 +81,9 @@ alias todo="todo.sh -d ~/Dropbox/TextSync/TODO/todo.cfg"
 alias et="eton"
 ## toipe (https://github.com/Samyak2/toipe)
 alias to="toipe"
+## jrnl.sh
+setopt HIST_IGNORE_SPACE
+alias jrnl=" jrnl"
 
 # Preferred editor for local and remote sessions
 export EDITOR='nvim'
