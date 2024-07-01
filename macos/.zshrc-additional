@@ -8,3 +8,5 @@ fi
 #export PATH=/opt/homebrew/opt/python@3.12/libexec/bin:$PATH
 ## python 3.11
 export PATH=/opt/homebrew/opt/python@3.11/libexec/bin:$PATH
+## docker on apple silicon
+export DOCKER_DEFAULT_PLATFORM=linux/amd64
