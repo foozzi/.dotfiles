@@ -16,13 +16,7 @@ local function paste_titled_link()
 		local filename_part = parts[1]
 		local filename_and_category = vim.split(filename_part, "/")
 		local title = parts[#parts]:match("^%s*(.-)%s*$")
-		local link = "["
-			.. title
-			.. "](../"
-			.. filename_and_category[#filename_and_category - 1]
-			.. "/"
-			.. filename_and_category[#filename_and_category]
-			.. ")"
+		local link = "[" .. title .. "](" .. filename_and_category[#filename_and_category] .. ")"
 		vim.api.nvim_put({ link }, "", true, true)
 	end
 end
@@ -68,12 +62,12 @@ M.search_raw_title = function(opts)
 					"--with-filename",
 					"--line-number",
 					"-i",
-					"raw_title:.*" .. prompt,
+					"title:.*" .. prompt,
 					search_dir,
 				}
 				return cmd
 			end, opts.entry_maker or function(entry)
-				local filename, lnum, raw_title = entry:match("([^:]+):(%d+):raw_title:(.*)")
+				local filename, lnum, raw_title = entry:match("([^:]+):(%d+):title:(.*)")
 				if not filename then
 					return nil
 				end

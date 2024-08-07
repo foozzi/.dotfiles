@@ -79,6 +79,7 @@ alias py='python'
 alias todo="todo.sh -d ~/Dropbox/TextSync/TODO/todo.cfg"
 ## eton
 alias et="eton"
+alias zk="eton zk"
 ## toipe (https://github.com/Samyak2/toipe)
 alias to="toipe"
 ## jrnl.sh
