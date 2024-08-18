@@ -13,7 +13,7 @@
 # https://github.com/xwmx/nb
 ###############################################################################
 
-export NB_DIR="${NB_DIR:-/Users/fz0x1/Dropbox/TextSync/NOTES}" # Set by `nb` • Tue Feb 27 09:55:17 EST 2024
+# export NB_DIR="${NB_DIR:-/Users/fz0x1/Dropbox/TextSync/NOTES}" # Set by `nb` • Tue Feb 27 09:55:17 EST 2024
 
 export EDITOR="nvim" # Set by `nb` • Thu Mar 14 11:06:48 PM EDT 2024
 export NB_PINNED_PATTERN="#pinned"

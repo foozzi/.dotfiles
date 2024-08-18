@@ -4,19 +4,24 @@ local action_state = require("telescope.actions.state")
 local conf = require("telescope.config").values
 local pickers = require("telescope.pickers")
 local actions = require("telescope.actions")
-local mapvimkey = require("utils.keymapper").mapvimkey
+local helpers = require("utils.helpers")
 
 local M = {}
 
 local function paste_titled_link()
 	return function(prompt_bufnr)
 		actions.close(prompt_bufnr)
+		local current_file = vim.fn.expand("%:p")
 		local selection = action_state.get_selected_entry()
 		local parts = vim.split(selection.value, ":")
 		local filename_part = parts[1]
-		local filename_and_category = vim.split(filename_part, "/")
+		-- local filename_and_category = vim.split(filename_part, "/")
+		local relative_path = helpers.get_relative_path(current_file, filename_part)
 		local title = parts[#parts]:match("^%s*(.-)%s*$")
-		local link = "[" .. title .. "](" .. filename_and_category[#filename_and_category] .. ")"
+		-- remove `#` from header name if it regular wiki
+		title = title:gsub("^%s*#%s*", "")
+		relative_path = relative_path:gsub(" ", "%%20")
+		local link = "[" .. title .. "](" .. relative_path .. ")"
 		vim.api.nvim_put({ link }, "", true, true)
 	end
 end
@@ -62,12 +67,25 @@ M.search_raw_title = function(opts)
 					"--with-filename",
 					"--line-number",
 					"-i",
+					"-m",
+					"1",
 					"title:.*" .. prompt,
 					search_dir,
 				}
+				if opts.type ~= "zettel" then
+					cmd[9] = "^#.*" .. prompt
+				end
+
 				return cmd
 			end, opts.entry_maker or function(entry)
-				local filename, lnum, raw_title = entry:match("([^:]+):(%d+):title:(.*)")
+				local filename, lnum, header
+
+				if opts.type ~= "zettel" then
+					filename, lnum, header = entry:match("([^:]+):(%d+):#%s*(.*)")
+				else
+					filename, lnum, header = entry:match("([^:]+):(%d+):title:(.*)")
+				end
+
 				if not filename then
 					return nil
 				end
@@ -77,8 +95,8 @@ M.search_raw_title = function(opts)
 
 				return {
 					value = entry,
-					ordinal = basename .. " " .. (raw_title or ""),
-					display = basename .. " - " .. (raw_title or ""),
+					ordinal = basename .. " " .. (header or ""),
+					display = basename .. " - " .. (header or ""),
 					filename = filename,
 					lnum = tonumber(lnum),
 				}
@@ -114,9 +132,9 @@ M.search_raw_title = function(opts)
 		:find()
 end
 
-vim.api.nvim_create_user_command("SearchZettelTitle", function()
-	M.search_raw_title({ search_dir = "/Users/fz0x1/Dropbox/TextSync/NOTES/01-zettel/" })
-end, {})
-mapvimkey("<leader>fm", "SearchZettelTitle", "Search by zettel title")
+-- vim.api.nvim_create_user_command("SearchZettelTitle", function()
+-- 	M.search_raw_title({ search_dir = "/Users/fz0x1/Dropbox/TextSync/PKM/00-zettelkasten/" })
+-- end, {})
+-- mapvimkey("<leader>fm", "SearchZettelTitle", "Search by zettel title")
 
 return M

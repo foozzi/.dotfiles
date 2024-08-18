@@ -67,16 +67,24 @@ alias ovim='vim' # original vim
 alias diary='ovim ~/vimwiki/diary/diary.asc.md'
 ## nvim
 alias evim='nvim ~/.dotfiles/global/.config/nvim/'
+alias kvim='nvim ~/PKM/'
+alias cvim='nvim ~/.zshrc'
+alias tvim='nvim ~/Dropbox/TODO/'
+alias kvimr='nvim ~/PKM/30-resources/'
+alias kvimj='nvim ~/PKM/1-journal/'
+alias jvim='nvim ~/PKM/1-journal/$(date "+%Y-%m-%d").md'
 # alias vim='nvim'
 alias vi='nvim'
 alias v='nvim'
+## string
+alias gen8='LC_CTYPE=C tr -dc 'A-Za-z0-9' < /dev/urandom | head -c 8 | pbcopy'
 ## wttr.in
 alias wr='curl wttr.in'
 ## python
 alias python='python3'
 alias py='python'
 ## todo.txt
-alias todo="todo.sh -d ~/Dropbox/TextSync/TODO/todo.cfg"
+alias todo="todo.sh -d ~/Dropbox/TODO/todo.cfg"
 ## eton
 alias et="eton"
 alias zk="eton zk"
@@ -85,6 +93,8 @@ alias to="toipe"
 ## jrnl.sh
 setopt HIST_IGNORE_SPACE
 alias jrnl=" jrnl"
+## jupyter
+alias jup="jupyter lab"
 
 # Preferred editor for local and remote sessions
 export EDITOR='nvim'
