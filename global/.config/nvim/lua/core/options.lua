@@ -132,7 +132,8 @@ vim.opt.langmap = {
 	"Ё/",
 }
 
-M.zettelkasten_dir = "~/PKM/"
-M.resources_dir = "~/PKM/30 resources/"
+M.zettelkasten_dir = vim.fn.expand("~/PKM/00-zettelkasten/")
+M.resources_dir = vim.fn.expand("~/PKM/30 resources/")
+M.pkm_dir = vim.fn.expand("~/PKM/")
 
 return M

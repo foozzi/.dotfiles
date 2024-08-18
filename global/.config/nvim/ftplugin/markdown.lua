@@ -1,3 +1,5 @@
+local zettelkasten_dir = require("core.options").zettelkasten_dir
+local pkm_dir = require("core.options").pkm_dir
 -- inserting a link with a title
 vim.api.nvim_set_keymap(
 	"n",
@@ -31,13 +33,15 @@ vim.api.nvim_set_keymap(
 vim.api.nvim_set_keymap(
 	"n",
 	"<leader>fm",
-	":lua require('utils.telescope_addons').search_raw_title({ search_dir = '/Users/fz0x1/PKM/00-zettelkasten', type = 'zettel' })<CR>",
+	":lua require('utils.telescope_addons').search_raw_title({ search_dir = '"
+		.. zettelkasten_dir
+		.. "', type = 'zettel' })<CR>",
 	{ silent = true, noremap = true }
 )
 vim.api.nvim_set_keymap(
 	"n",
 	"<leader>fk",
-	":lua require('utils.telescope_addons').search_raw_title({ search_dir = '/Users/fz0x1/PKM' })<CR>",
+	":lua require('utils.telescope_addons').search_raw_title({ search_dir = '" .. pkm_dir .. "' })<CR>",
 	{ silent = true, noremap = true }
 )
 
