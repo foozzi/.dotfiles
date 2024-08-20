@@ -95,6 +95,8 @@ setopt HIST_IGNORE_SPACE
 alias jrnl=" jrnl"
 ## jupyter
 alias jup="jupyter lab"
+## hledger
+alias hledger='hledger -f ~/PKM/ledger/2024.journal'
 
 # Preferred editor for local and remote sessions
 export EDITOR='nvim'
@@ -132,6 +134,8 @@ export PATH=$PATH:$HOME/.cargo/bin
 export TERM=tmux-256color
 ## default gui browser
 # export BROWSER="firefox"
+## hledger
+# export LEDGER_FILE=~/PKM/ledger/2024.journal
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export VOLTA_HOME="$HOME/.volta"
