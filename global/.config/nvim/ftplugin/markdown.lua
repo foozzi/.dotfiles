@@ -45,7 +45,8 @@ vim.api.nvim_set_keymap(
 	{ silent = true, noremap = true }
 )
 
--- vim.opt_local.textwidth = 80
+vim.opt_local.textwidth = 80
+vim.opt_local.colorcolumn = "80"
 -- vim.opt_local.wrap = true
 
 -- vim.cmd([[set briopt+=list:-1]])

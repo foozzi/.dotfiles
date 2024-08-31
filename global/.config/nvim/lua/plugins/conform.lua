@@ -11,6 +11,7 @@ return {
 			typescriptreact = { "biome" },
 			json = { "biome" },
 			sh = { "shfmt" },
+			markdown = { "prettier" },
 			["*"] = { "trim_whitespace", "codespell" },
 		},
 		format_on_save = {
