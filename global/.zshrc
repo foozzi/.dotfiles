@@ -114,6 +114,8 @@ alias di=" eton diary"
 alias jup="jupyter lab"
 ## hledger
 alias hledger='hledger -f ~/PKM/ledger/2024.journal'
+## other
+alias cclear="reset && tmux clear-history"
 
 # Preferred editor for local and remote sessions
 export EDITOR='nvim'
