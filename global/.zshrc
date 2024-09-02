@@ -45,6 +45,21 @@ ex ()
   fi
 }
 
+diary ()
+{
+  if [[ ! -v "$1" ]]; then
+    arg1=1
+  else
+    arg1="$1"
+  fi
+
+  if [[ "$2" == "md" ]]; then
+    jrnl -n "$arg1" | glow
+  else
+    jrnl -n "$arg1"
+  fi
+}
+
 
 # aliases
 ## tmux
@@ -63,16 +78,16 @@ alias zshs='. ~/.zshrc'
 ## neomutt
 alias nm='neomutt'
 ## vim
-alias ovim='vim' # original vim
-alias diary='ovim ~/vimwiki/diary/diary.asc.md'
+# alias ovim='vim' # original vim
+# alias diary='ovim ~/vimwiki/diary/diary.asc.md'
 ## nvim
 alias evim='nvim ~/.dotfiles/global/.config/nvim/'
 alias kvim='nvim ~/PKM/'
 alias cvim='nvim ~/.zshrc'
 alias tvim='nvim ~/Dropbox/TODO/'
-alias kvimr='nvim ~/PKM/300-resources/'
-alias kvimj='nvim ~/PKM/1-journal/'
-alias jvim='nvim ~/PKM/1-journal/$(date "+%Y-%m-%d").md'
+alias kvimr='nvim ~/PKM/05 - resources/'
+alias kvimj='nvim ~/PKM/02 - journal/'
+alias jvim='nvim ~/PKM/02 - journal/$(date "+%Y-%m-%d").md'
 # alias vim='nvim'
 alias vi='nvim'
 alias v='nvim'
@@ -93,6 +108,8 @@ alias to="toipe"
 ## jrnl.sh
 setopt HIST_IGNORE_SPACE
 alias jrnl=" jrnl"
+alias lj="jrnl -n 3 --format json | jq '.entries[].date'"
+alias di=" eton diary"
 ## jupyter
 alias jup="jupyter lab"
 ## hledger
