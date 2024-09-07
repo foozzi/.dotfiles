@@ -5,7 +5,14 @@ return {
 		formatters = {
 			prettier_markdown = {
 				command = "prettier",
-				args = { "--stdin-filepath", "$FILENAME", "--config", os.getenv("HOME") .. "/.prettierrc.yaml" },
+				args = {
+					"--stdin-filepath",
+					"$FILENAME",
+					"--config",
+					os.getenv("HOME") .. "/.prettierrc.yaml",
+					"--parser",
+					"markdown",
+				},
 				-- stdin = true,
 				-- options = {
 				-- 	ext_parsers = {
