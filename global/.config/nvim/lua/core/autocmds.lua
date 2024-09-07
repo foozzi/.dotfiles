@@ -42,5 +42,5 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufReadPre" }, {
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	pattern = "*.jrnl",
-	command = "set filetype=markdown",
+	command = "set filetype=jrnl",
 })

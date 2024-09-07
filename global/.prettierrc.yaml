@@ -1,1 +1,5 @@
 proseWrap: "always"
+overrides:
+  - files: "*.jrnl"
+    options:
+      parser: markdown

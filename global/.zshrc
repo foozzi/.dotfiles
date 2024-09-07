@@ -1,6 +1,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+setopt HIST_IGNORE_SPACE
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -15,6 +17,8 @@ ZSH_THEME="robbyrussell"
 plugins=(git python tmux genpass web-search zsh-syntax-highlighting zsh-autosuggestions)
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+
+commit_date=$(date +%Y%m%d)
 
 source $ZSH/oh-my-zsh.sh
 # functions
@@ -103,19 +107,22 @@ alias todo="todo.sh -d ~/Dropbox/TODO/todo.cfg"
 ## eton
 alias et="eton"
 alias zk="eton zk"
+alias di=" eton diary"
 ## toipe (https://github.com/Samyak2/toipe)
 alias to="toipe"
 ## jrnl.sh
-setopt HIST_IGNORE_SPACE
 alias jrnl=" jrnl"
 alias lj="jrnl -n 3 --format json | jq '.entries[].date'"
-alias di=" eton diary"
 ## jupyter
 alias jup="jupyter lab"
 ## hledger
 alias hledger='hledger -f ~/PKM/ledger/2024.journal'
+alias ehledger='nvim ~/PKM/ledger/2024.journal'
 ## other
 alias cclear="reset && tmux clear-history"
+## git
+alias s_diary="cd ~/PKM/diary/ && git commit -am '$commit_date' && git push origin master"
+alias s_ledger="cd ~/PKM/ledger/ && git commit -am '$commit_date' && git push origin master"
 
 # Preferred editor for local and remote sessions
 export EDITOR='nvim'
