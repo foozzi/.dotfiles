@@ -1,6 +1,6 @@
 return {
 	"sainnhe/everforest",
-	lazy = false,
+	-- lazy = false,
 	priority = 1000,
 	config = function()
 		-- Optionally configure and load the colorscheme
