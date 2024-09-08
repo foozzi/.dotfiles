@@ -109,7 +109,7 @@ alias et="eton"
 alias zk="eton zk"
 alias di=" eton diary"
 ## toipe (https://github.com/Samyak2/toipe)
-alias to="toipe"
+alias to="toipe -f ~/Productivity/TextSync/typing_wordlists/most_problems"
 ## jrnl.sh
 alias jrnl=" jrnl"
 alias lj="jrnl -n 3 --format json | jq '.entries[].date'"
