@@ -1,6 +1,7 @@
 [user]
-	name = foozzi
-	email = foozzione@gmail.com
+	name = fz0x1
+	email = umka@posteo.net
+	signingkey = 979143DA930C3525556DBF7E7FB357158731DF87
 [core]
 	excludesfile = "$HOME/.gitignore"
 	pager = delta
@@ -15,3 +16,13 @@
     colorMoved = default
 [init]
 	defaultBranch = master
+[commit]
+	gpgSign = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[credential]
+	helper = osxkeychain
+	useHttpPath = true

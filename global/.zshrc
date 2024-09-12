@@ -119,7 +119,7 @@ alias jup="jupyter lab"
 alias hledger='hledger -f ~/PKM/ledger/2024.journal'
 alias ehledger='nvim ~/PKM/ledger/2024.journal'
 ## other
-alias cclear="reset && tmux clear-history"
+alias cclear="reset && tmux clear-history && cd"
 ## git
 alias s_diary="cd ~/PKM/diary/ && git commit -am '$commit_date' && git push origin master"
 alias s_ledger="cd ~/PKM/ledger/ && git commit -am '$commit_date' && git push origin master"
