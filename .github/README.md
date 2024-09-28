@@ -1,10 +1,1 @@
-### Install
-
-```bash
-# linux
-stow --no-folding global
-stow --no-folding linux
-# macOS
-stow --no-folding global
-stow --no-folding macos
-```
+Moved to <https://git.fz0x1.wtf/>
